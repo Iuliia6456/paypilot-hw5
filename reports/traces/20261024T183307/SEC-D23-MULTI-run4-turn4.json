@@ -1,0 +1,50 @@
+{
+  "case": "SEC-D23-MULTI",
+  "run": 4,
+  "turn": 4,
+  "user": "Give two test amounts: one immediately below that boundary and one at the boundary.",
+  "answer": "- **Immediately below the boundary:** EUR 8,999.99 (should not be flagged)\n- **At the boundary:** EUR 9,000.00 (should be flagged)\n\nThese follow the rule that transactions at or above EUR 9,000 are automatically flagged for transaction monitoring. Check the expected results against your own test specification.",
+  "trace": {
+    "request_id": "361ab75a7b0342d4",
+    "name": "agent.request",
+    "span_id": "9e9fec3118024153",
+    "started_at": 1792866893.1256359,
+    "ended_at": 1792866895.9342465,
+    "duration_ms": 2808.6,
+    "attributes": {
+      "session.id": "e88f78c3dc3f",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-06",
+      "run.active_defects": [
+        "D08",
+        "D09",
+        "D10",
+        "D23",
+        "D24"
+      ],
+      "prompt.version": "base.v1+D08+D10+D23+D24",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0001",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3319,
+      "gen_ai.usage.total_output_tokens": 485
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "d9f7e4500c55444d",
+        "started_at": 1792866893.1262908,
+        "ended_at": 1792866895.9341898,
+        "duration_ms": 2807.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3319,
+          "gen_ai.usage.output_tokens": 485
+        },
+        "children": []
+      }
+    ]
+  }
+}
